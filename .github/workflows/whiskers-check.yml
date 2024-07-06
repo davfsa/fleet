@@ -13,14 +13,14 @@ jobs:
 
       - name: Extract whiskers version from tera file
         run: |
-          version=$(cat fleet.tera | pcregrep -o1 'version: (.+)')
+          WHISKERS_VERSION=$(sed -nr 's/^\s*version: (.+)/\1/p' fleet.tera)
 
-          if [ -z "${version}" ]; then
+          if [ -z "${WHISKERS_VERSION}" ]; then
             echo "Failed to extract whiskers version from 'fleet.tera'"
             exit 1
           fi
 
-          echo "Detected whiskers version is '$version'"
+          echo "Detected whiskers version is '$WHISKERS_VERSION'"
           echo "WHISKERS_VERSION=v${WHISKERS_VERSION}" >> $GITHUB_ENV
 
       - name: Fetch whiskers ${{ env.WHISKERS_VERSION }}
