@@ -8,7 +8,7 @@ whiskers:
 ---
 
 {%- if flavor.dark -%}
-{%- set transparent = "ffffff" -%} 
+{%- set transparent = "ffffff" -%}
 {%- set diff_added_opacity = "20%" -%}
 {%- set diff_conflict_opacity = "30%" -%}
 {%- set diff_deleted_opacity = "20%" -%}
@@ -31,7 +31,7 @@ whiskers:
 
     "shadow.border": "Mantle",
 
-    "background.default": "Base",
+    "background.default": "Base"
     "background.primary": "Crust",
     "background.secondary": "Mantle",
     "background.disabled": "Transparent",
